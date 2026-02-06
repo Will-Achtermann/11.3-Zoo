@@ -1,14 +1,15 @@
 
 // TODO: extend Entity
-// TODO: make Animal abstract
-public class Animal {
+public abstract class Animal {
+    protected int hunger;
+    protected boolean isSick;
 
-    // TODO: instance variables
+    public Animal() {
+        this.hunger = 0;
+        this.isSick = false;
+    }
 
-    // TODO: add constructor
-
-    // TODO: add abstract method eat(Food food)
-    // TODO: add abstract method move(Zoo zoo)
     
-    // TODO: add non-abstact methods as necessary
-}
+    public abstract void eat(); 
+    public abstract void move();
+} //TODO: add non-abstact methods as necessary

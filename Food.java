@@ -1,14 +1,21 @@
+public abstract class Food extends Entity{
+    protected int nutrition;
+    protected boolean isAnimalProduct;
+    protected boolean isVegetableProduct;
 
-// TODO: make Food abstract
-// TODO: extend Entity
-public class Food {
+    public Food(String name, int x, int y, int age){
+        super(name, x, y, age);
 
-    // TODO: add instance variables
+    }
 
-    // TODO: add constructor
-
-    // TODO: add abstract method beEaten(Animal eater)
+    public abstract void beEaten(Animal eater);
 
     // TODO: add non-abstract methods as needed
+    public void setAnimalProduct(boolean what){
+        isAnimalProduct = what;
+    }
 
+    public void setVegetableProduct(boolean what){
+        isVegetableProduct = what;
+    }
 }
