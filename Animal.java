@@ -1,15 +1,16 @@
 
 // TODO: extend Entity
-public abstract class Animal {
+public abstract class Animal extends Entity{
     protected int hunger;
     protected boolean isSick;
 
-    public Animal() {
+    public Animal(String name, int x, int y, int age) {
+        super(name, x, y, age);
         this.hunger = 0;
         this.isSick = false;
     }
 
     
-    public abstract void eat(); 
-    public abstract void move();
+    public abstract void eat(Food f); 
+    public abstract void move(Zoo z);
 } //TODO: add non-abstact methods as necessary

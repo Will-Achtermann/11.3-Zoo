@@ -18,4 +18,12 @@ public abstract class Food extends Entity{
     public void setVegetableProduct(boolean what){
         isVegetableProduct = what;
     }
+
+    public String getProduct(){
+        if (isAnimalProduct){
+            return "Animal";
+        }else{
+            return "Vegetable";
+        }
+    }
 }
