@@ -31,8 +31,10 @@ public class Dog extends Animal{
         if (this.isAlive == false){
            if ((int)(Math.random() * 2) == 1){
                 Dog d = new Dog("bruh", xCor + 1, yCor - 1, 0);
+                z.add(d);
                 if ((int)(Math.random() * 4) == 1){
                     Dog d2 = new Dog("bruh", xCor - 1, yCor - 1, 0);
+                    z.add(d2);
                 }
            }
         }
@@ -66,7 +68,13 @@ public class Dog extends Animal{
         //g.drawString("\\_o_/", Zoo.wrap(xPos,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(yPos,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
     }
 
-    // TODO: override the eat method
+    
+    @Override
+    public void eat(Food f){
+        f.beEaten(this);
+    }
+
+
     @Override
     public void move(Zoo z){
         int direction;
