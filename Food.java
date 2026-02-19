@@ -11,13 +11,7 @@ public abstract class Food extends Entity{
     public abstract void beEaten(Animal eater);
 
     // TODO: add non-abstract methods as needed
-    public void setAnimalProduct(boolean what){
-        isAnimalProduct = what;
-    }
 
-    public void setVegetableProduct(boolean what){
-        isVegetableProduct = what;
-    }
 
     public String getProduct(){
         if (isAnimalProduct){

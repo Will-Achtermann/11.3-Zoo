@@ -12,6 +12,8 @@ public class Cheese extends Food{
         this.expired = false;
         this.nutrition = 10;
         this.lives = 3;
+        this.isAnimalProduct = true;
+        this.isVegetableProduct = false;
     }
 
     @Override
@@ -38,7 +40,7 @@ public class Cheese extends Food{
         //TODO: PUT CORRECT EMOJI
         g.setColor(Color.DARK_GRAY);
         g.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 25));
-        g.drawString("🐈", Zoo.wrap(this.xCor,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(this.yCor,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
+        g.drawString("🧀", Zoo.wrap(this.xCor,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(this.yCor,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
     }
 
     @Override

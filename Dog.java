@@ -9,7 +9,7 @@ public class Dog extends Animal{
 
     public Dog(String name, int x, int y, int age){
         super(name, x, y, age);
-        perferedDirection = (int)(Math.random() * 4);
+        perferedDirection = (int)(Math.random() * 8 + 1);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class Dog extends Animal{
         
         //Eating
         for (Entity e : z.at(this.xCor, this.yCor)){
-            if (e instanceof Ham || e instanceof Rat){
+            if (e instanceof Ham || e instanceof Rat || e instanceof Cheese){
                 if (hunger > 50){
                     this.eat(e);
                 }else if (Math.random() * 100 == 83){
@@ -59,7 +59,7 @@ public class Dog extends Animal{
         //TODO: CHANGE EMOJIS
         g.setColor(Color.DARK_GRAY);
         g.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 25));
-        g.drawString("🐈", Zoo.wrap(this.xCor,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(this.yCor,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
+        g.drawString("🐕", Zoo.wrap(this.xCor,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(this.yCor,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
 
         //g.setColor(Color.DARK_GRAY);
         //g.setFont(new Font("Consolas", Font.PLAIN, 10));
@@ -81,22 +81,37 @@ public class Dog extends Animal{
         if (Math.random()*100 < 75){
             direction = perferedDirection;
         }else{
-            direction = (int)(Math.random()*4);
+            direction = (int)(Math.random()*8 + 1);
         }
 
         switch (direction) {
-            case 1:
+            case 1: //North
                 this.yCor += 1;
                 break;
-            case 2:
+            case 2: //East
                 this.xCor += 1;
                 break;
-            case 3:
+            case 3: //South
                 this.yCor -= 1;
                 break;
-            case 4:
+            case 4: //West
                 this.xCor -= 1;
                 break;
+            case 5: //North East
+                this.xCor += 1;
+                this.yCor += 1;
+                break;
+            case 6: //South East
+                this.xCor += 1;
+                this.yCor -= 1;
+                break;
+            case 7: //South West
+                this.xCor -= 1;
+                this.yCor -= 1;
+                break;
+            case 8: //North West
+                this.xCor -= 1;
+                this.yCor += 1;
         }
     }
 

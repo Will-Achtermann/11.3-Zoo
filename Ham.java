@@ -10,6 +10,8 @@ public class Ham extends Food{
         super(name, x, y, age);
         this.expired = false;
         this.nutrition = 15;
+        this.isAnimalProduct = true;
+        this.isVegetableProduct = false;
     }
 
     @Override
@@ -29,10 +31,9 @@ public class Ham extends Food{
 
     @Override
     public void draw(Graphics g){
-        //TODO: PUT CORRECT EMOJI
         g.setColor(Color.DARK_GRAY);
         g.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 25));
-        g.drawString("🐈", Zoo.wrap(this.xCor,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(this.yCor,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
+        g.drawString("🍖", Zoo.wrap(this.xCor,Zoo.ZOO_COLS)*Zoo.SCALE, Zoo.wrap(this.yCor,Zoo.ZOO_ROWS)*Zoo.SCALE+25);
     }
 
     @Override
