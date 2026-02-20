@@ -1,5 +1,4 @@
 
-import java.util.*;
 import java.awt.*;
 
 // TODO: extend Animal
@@ -14,6 +13,9 @@ public class Cat extends Animal{
 
     @Override
     public void tick(Zoo z){
+        this.xCor = z.wrap(this.xCor, z.getWidth());
+        this.yCor = z.wrap(this.yCor, z.getHeight());
+
         //Dying
         if (age > 500){
             if (isSick){
@@ -36,9 +38,14 @@ public class Cat extends Animal{
 
         //EATING
         for (Entity e : z.at(this.xCor, this.yCor)){
-            if (e instanceof Ham || e instanceof Rat || e instanceof Cheese){
-                if (hunger > 25 && (int)(Math.random()*100) < 100){
-                    this.eat(e);
+            if (hunger > 25 && (int)(Math.random()*100) < 100){
+                if (e instanceof Ham){
+                    this.eat((Ham)e);
+                }else if (e instanceof Cheese){
+                    this.eat((Cheese)e);
+                }else if (e instanceof Rat){
+                    Rat r = (Rat)e;
+                    r.beEaten(this);
                 }
             }
         }
@@ -55,6 +62,7 @@ public class Cat extends Animal{
             }
         }
         this.move(z);
+        this.age++;
     }
 
     @Override
@@ -86,7 +94,7 @@ public class Cat extends Animal{
                     if (e instanceof Cheese || e instanceof Ham || e instanceof Rat){
                         this.xCor = x; 
                         this.yCor = y;
-                        break;
+                        return;
                     }
                 }
             }

@@ -121,6 +121,36 @@ public class Zoo extends JPanel {
 		frame.setVisible(true);
 
         // TODO: add food and animals to the zoo
+        Cat c1 = new Cat("cat1", 10, 7, 20);
+        zoo.add(c1);
+        Cat c2 = new Cat("Cat2", 3, 3, 40);
+        zoo.add(c2);
+        Cat c3 = new Cat("Cat3", 1, 6, 0);
+        zoo.add(c3);
+
+        Dog d1 = new Dog("d1", 2, 1, 8);
+        zoo.add(d1);
+        Dog d2 = new Dog("d2", 10, 10, 50);
+        zoo.add(d2);
+
+        Ham h1 = new Ham(4, 5, "h1", 0);
+        zoo.add(h1);
+        Ham h2 = new Ham(9, 3, "h2", 0);
+        zoo.add(h2);
+        Ham h3 = new Ham(7, 5, "h3", 0);
+        zoo.add(h3);
+
+        Cheese ch1 = new Cheese(6, 4, "ch1", 0);
+        zoo.add(ch1);
+        Cheese ch2 = new Cheese(4, 6, "ch2", 0);
+        zoo.add(ch2);
+        Cheese ch3 = new Cheese(4, 8, "ch3", 0);
+        zoo.add(ch3);
+
+        Rat r1 = new Rat("r1", 2, 2, 0);
+        zoo.add(r1);
+        Rat r2 = new Rat("r2", 6, 7, 0);
+        zoo.add(r2);
 
         int tickCount = 0;
         while(true) {
